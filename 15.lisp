@@ -156,27 +156,27 @@
 (defun goal-p (state)
   "Returns T if state is a goal state, else NIL.  Our goal test."
 
-  ;; IMPLEMENT ME
+  
   (equalp (puzzle-from-state state) #(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 15)))
 
 (defun dfs-enqueuer (state queue)
   "Enqueues in depth-first order"
 
-  ;; IMPLEMENT ME
+  
   ;;;stack LIFO
   (enqueue-at-front queue state))
 
 (defun bfs-enqueuer (state queue)
   "Enqueues in breadth-first order"
 
-  ;; IMPLEMENT ME
+  
   ;;;queue FIFO
   (enqueue-at-end queue state))                                         
 
 (defun manhattan-enqueuer (state queue)
   "Enqueues by manhattan distance"
 
-  ;; IMPLEMENT ME
+  
   (enqueue-by-priority queue
                        (lambda (state)
                          (let ((sum 0))
@@ -191,7 +191,7 @@
 (defun num-out-enqueuer (state queue)
   "Enqueues by number of tiles out of place"
 
-  ;; IMPLEMENT ME
+  
   (enqueue-by-priority queue
                        (lambda (state)
                          (let ((count 0))
@@ -214,14 +214,7 @@
     exceeded.  If maximum-iterations is set to nil, then there is no maximum number
     of iterations."
 
-  ;; IMPLEMENT ME
-
-  ;; hints: The history list ought to contain PUZZLES, not states.
-  ;; However, the queue ought to contain STATES, which in this case consist of
-  ;; conses consisting of the PUZZLE as the car, and the puzzle's parent's cons as the cdr.
-  ;; You should use #'equalp to test for equality between puzzles in the history list.
-  ;; You should also add the puzzle to the history list at exactly the same time
-  ;; you add its corresponding state to the queue.
+  
 
   (let* ((queue (make-empty-queue))
          (history (make-hash-table :test #'equalp))
