@@ -10,16 +10,7 @@
 
 ;;;; Basic utility functions and macros, used throughout the code. 
 
-;;; The utilities are divided into control flow macros, list
-;;; utilities, functions for 2-dimensional points, numeric utilities,
-;;; some trivial functions, utilities for strings, symbols and
-;;; printing, a debugging tool, and a testing tool."
 
-;;;; Control Flow Macros
-
-;;; We define iteration macros to match the book's pseudo-code.
-;;; This could all be done with LOOP, but some users don't have
-;;; the LOOP from the 2nd edition of 'Common Lisp: the Language'.
 
 (defmacro while (test do &body body)
   "Execute body while the test is true."
@@ -518,4 +509,5 @@ Expressions are used in Logic, and as actions for agents."
                           exp test *))
           ((T) (format t "~&;;; FAILURE: expected ~S" test))
           (otherwise)))
+
       test-result)))
